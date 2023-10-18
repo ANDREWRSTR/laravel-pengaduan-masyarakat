@@ -20,6 +20,10 @@ class LoginController extends Controller
             return redirect("login");
         }
     }
-    
+    function logout(){
+        Auth::logout();
+
+        return redirect("login");
+    }
 
 }

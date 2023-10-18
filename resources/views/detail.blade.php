@@ -38,7 +38,7 @@
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Laporan Pengaduan Masyarakat</a>
       <form class="d-flex">
-        <button class="btn btn-secondary" type="button">Log Out</button>
+        {{-- <button class="btn btn-secondary" type="button">Log Out</button> --}}
       </form>
     </div>
   </nav>

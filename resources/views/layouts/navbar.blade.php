@@ -14,7 +14,7 @@
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Pengaduan Masyarakat</a>
     <form class="d-flex">
-      <button class="btn btn-secondary" type="button">Log Out</button>
+      <a href="{{url('/logout')}}" class="btn btn-secondary" type="button">Log Out</button></a>
     </form>
     
   </div>

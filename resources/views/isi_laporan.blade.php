@@ -29,7 +29,7 @@
             <div class="container-fluid">
              <a class="navbar-brand" >Pengaduan Masyarakat</a>
              <form class="d-flex">
-                <button class="btn btn-secondary" type="button">Log Out</button>
+                {{-- <button class="btn btn-secondary" type="button">Log Out</button> --}}
               </form>
             </div>
         </nav>
@@ -51,12 +51,11 @@
         </div>
         <div class="mb-3">
             <label for="formFile" class="form-label" style="color:black"><b>Foto</b></label>
-            <input class="form-control" type="file" id="formFile" name="gambar">
+            <input class="form-control" type="file" id="formFile" name="gambar" required>
         </div>
 <button type="submit" class="btn btn-dark">kirim</button>
   </form>
-    </div>//ksdlhsaklhdkashlkds
-
+    </div>
 </body> 
 </html>
 

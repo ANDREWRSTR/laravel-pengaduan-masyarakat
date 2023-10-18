@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
+
 use App\models\pengaduan;
 
 class pengaduanController extends Controller
@@ -36,7 +37,7 @@ class pengaduanController extends Controller
 
     function proses_tambah_pengaduan (request $request){
 
-       
+       Auth::user()->nik;
         $request->validate([
             'isi_laporan' => 'required|min:5'
         ]);
@@ -50,7 +51,7 @@ class pengaduanController extends Controller
 
         DB::table('pengaduan')->insert([
             'tgl_pengaduan' => date ('Y-m-d'),
-            'nik' => '2',
+            'nik' => Auth::user()->nik,
             'isi_laporan' => $isi_laporan,
             'foto' => $request->gambar->getClientOriginalName(),
             'status' => 'proses'
