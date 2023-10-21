@@ -17,13 +17,13 @@ class LoginController extends Controller
         if(auth::attempt($data_login)){
             return redirect("table");
         }else{
-            return redirect("login");
+            return redirect("login")->with("error","username atau password salah");
         }
     }
     function logout(){
         Auth::logout();
 
-        return redirect("login");
+        return redirect("halaman");
     }
 
 }

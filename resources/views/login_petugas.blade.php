@@ -38,7 +38,7 @@
   <form id="accesspanel" action="login" method="post">
     @method("POST")
     @csrf
-    <h1 id="litheader">Login</h1>
+    <h1 id="litheader">Login Petugas</h1>
     <div class="inset">
       <p>
         <input type="text" name="username" id="email" placeholder="Username" autocomplete="off">
@@ -50,7 +50,7 @@
     <p class="p-container">
       <input type="submit" name="Login" id="go" value="Login">
     </p>
-    <p class="mid">tidak memiliki akun? <a link href="{{ ('registrasi')}}" class="link" > buat</a></p>
+    <p class="mid">tidak memiliki akun? <a link href="{{ ('petugas')}}" class="link" > buat</a></p>
   </form>
 </body>
 </html>

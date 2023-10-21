@@ -6,6 +6,7 @@ use App\Http\Controllers\masyarakatController;
 use App\Http\Controllers\PetugasController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\LoginPetugasController;
 
 Route::get('/', function () {return view('welcome');});
 Route::get('/app', function () { return view ('layouts.app'); });
@@ -30,14 +31,10 @@ Route::get('/masyarakat', [masyarakatController::class, 'data_warga']);
 Route::get('/login', [LoginController::class, 'login'])->name("login");
 Route::post('/login', [LoginController:: class, 'proses_login']);
     
-
+Route::get('/login_petugas',[LoginPetugasController::class, 'login_petugas']);
 Route::get('/petugas', [PetugasController:: class, 'petugas']);
 Route::post('/petugas', [PetugasController:: class, 'proses_registrasi_petugas']);
 Route::get('/data_petugas', [PetugasController:: class, 'data_petugas']);
-
-
-
-
 
 Route::middleware(['auth'])->group(function(){
     Route::get('/table', [pengaduanController::class, 'table']);
