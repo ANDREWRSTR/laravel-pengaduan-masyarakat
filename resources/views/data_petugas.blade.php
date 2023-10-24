@@ -44,7 +44,7 @@
        
    
     <tr>
-      <td>{{$petugas->id_petugas}}</td>
+      <td>{{$petugas->id}}</td>
       <td>{{$petugas->nama_petugas}}</td>
       <td>{{$petugas->username}}</td>
       <td>{{$petugas->password}}</td>

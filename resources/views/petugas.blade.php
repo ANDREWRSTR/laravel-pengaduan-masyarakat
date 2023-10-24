@@ -18,19 +18,19 @@
     <h1 id="litheader">Registrasi</h1>
     <div class="inset">
       <p>
-        <input type="text" name="nama_petugas"  placeholder="Nama" autocomplete="off">
+        <input type="text" name="nama_petugas"  placeholder="Nama" autocomplete="off" required>
       </p>
       <p>
-        <input type="text" name="username"  placeholder="Username" autocomplete="off">
+        <input type="text" name="username"  placeholder="Username" autocomplete="off" required>
       </p>
       <p>
-        <input type="password" name="passowrd"  placeholder="Password" autocomplete="off">
+        <input type="password" name="passowrd"  placeholder="Password" autocomplete="off" required>
       </p>
       <p>
-        <input type="text" name="telp"  placeholder="No Telepon" autocomplete="off">
+        <input type="text" name="telp"  placeholder="No Telepon" autocomplete="off" required>
       </p>
       <p>
-        <select name='level' class="select">
+        <select name="level" class="select" required>
           <option selected ></option>
           <option value="1">admin</option>
           <option value="2">petugas</option>

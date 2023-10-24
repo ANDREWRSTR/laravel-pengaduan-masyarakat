@@ -32,7 +32,7 @@ class PetugasController extends Controller
             'telp' => $telp,
             'level' => $level,
         ]);
-        return redirect('/login');
+        return redirect('/login_petugas');
 }
         function data_petugas (){
 

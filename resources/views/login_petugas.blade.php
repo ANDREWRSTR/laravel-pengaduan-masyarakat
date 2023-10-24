@@ -33,9 +33,9 @@
   
   @if (session("error"))
     <div class="error">{{session("error")}}</div>
-  @endif
+  @endif 
 
-  <form id="accesspanel" action="login" method="post">
+  <form id="accesspanel" action="login_petugas" method="post">
     @method("POST")
     @csrf
     <h1 id="litheader">Login Petugas</h1>
@@ -50,7 +50,7 @@
     <p class="p-container">
       <input type="submit" name="Login" id="go" value="Login">
     </p>
-    <p class="mid">tidak memiliki akun? <a link href="{{ ('petugas')}}" class="link" > buat</a></p>
+    <p class="mid">tidak memiliki akun? <a link href="{{ url('petugas')}}" class="link" > buat</a></p>
   </form>
 </body>
 </html>

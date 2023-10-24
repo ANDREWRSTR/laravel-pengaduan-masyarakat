@@ -32,6 +32,7 @@ Route::get('/login', [LoginController::class, 'login'])->name("login");
 Route::post('/login', [LoginController:: class, 'proses_login']);
     
 Route::get('/login_petugas',[LoginPetugasController::class, 'login_petugas']);
+Route::post('/login_petugas',[LoginPetugasController::class, 'proses_login_petugas']);
 Route::get('/petugas', [PetugasController:: class, 'petugas']);
 Route::post('/petugas', [PetugasController:: class, 'proses_registrasi_petugas']);
 Route::get('/data_petugas', [PetugasController:: class, 'data_petugas']);
