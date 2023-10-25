@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
 
+
 use App\models\pengaduan;
 
 class pengaduanController extends Controller

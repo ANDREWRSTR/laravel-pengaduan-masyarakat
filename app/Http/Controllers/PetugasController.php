@@ -8,12 +8,12 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 
 
-
+use App\models\pengaduan;
 
 class PetugasController extends Controller
 {
     function petugas (){
-        return view('petugas');
+        return view('registrasi_petugas');
     }
     function proses_registrasi_petugas (request $request){
 
@@ -41,5 +41,17 @@ class PetugasController extends Controller
             return view('data_petugas',['petugas' => $petugas]); 
 
         }
+        
+        function halaman_petugas (){
+            $pengaduan = pengaduan::all();
+
+            return view ('petugas',['pengaduan' => $pengaduan]);
+        }
+        function logout(){
+            Auth::guard("petugas")->logout();
+    
+            return redirect("login_petugas");
+        }
+      
        
 }

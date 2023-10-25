@@ -50,7 +50,7 @@
     <p class="p-container">
       <input type="submit" name="Login" id="go" value="Login">
     </p>
-    <p class="mid">tidak memiliki akun? <a link href="{{ url('petugas')}}" class="link" > buat</a></p>
+    <p class="mid">tidak memiliki akun? <a link href="{{ url('registrasi_petugas')}}" class="link" > buat</a></p>
   </form>
 </body>
 </html>

@@ -17,14 +17,15 @@ class LoginPetugasController extends Controller
         $data_login = $request->only("username","password");
         if(auth::guard("petugas")->attempt($data_login)){
 
-            return redirect("data_petugas");
+            return redirect("petugas");
             
            
         }else{
 
             return redirect("login_petugas")->with("error","username atau password salah");
-            
-            
+    
         }
+    
     }
+  
 }
