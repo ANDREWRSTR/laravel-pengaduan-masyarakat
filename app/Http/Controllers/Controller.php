@@ -11,4 +11,7 @@ class Controller extends BaseController
     function registrasi(){
         return view('/registrasi');
     }
+    function tes(){
+        return view('tes');
+    }
 }

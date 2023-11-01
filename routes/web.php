@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\pengaduanController;
 use App\Http\Controllers\masyarakatController;
@@ -11,7 +12,7 @@ use App\Http\Controllers\LoginPetugasController;
 Route::get('/', function () {return view('welcome');});
 Route::get('/app', function () { return view ('layouts.app'); });
 
-
+Route::get('/tes',[Controller::class,'tes']);
 
    
 
@@ -28,7 +29,7 @@ Route::get('/login', [LoginController::class, 'login'])->name("login");
 Route::post('/login', [LoginController:: class, 'proses_login']);
 
 Route::get('/masyarakat', [masyarakatController::class, 'data_warga']);
-
+Route::get('/data_petugas', [PetugasController:: class, 'data_petugas']);
 
 
 Route::get('/registrasi_petugas', [PetugasController:: class, 'petugas']);
@@ -37,7 +38,8 @@ Route::post('/registrasi_petugas', [PetugasController:: class, 'proses_registras
 Route::get('/login_petugas',[LoginPetugasController::class, 'login_petugas']);
 Route::post('/login_petugas',[LoginPetugasController::class, 'proses_login_petugas']);
 
-Route::get('/data_petugas', [PetugasController:: class, 'data_petugas']);
+Route::get('/status/{id}', [PetugasController:: class, 'status']);
+Route::post('/status/{id}', [PetugasController:: class, 'proses_status']);
 
 
 Route::middleware(['auth'])->group(function(){

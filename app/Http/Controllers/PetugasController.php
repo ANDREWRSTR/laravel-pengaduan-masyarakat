@@ -47,11 +47,25 @@ class PetugasController extends Controller
 
             return view ('petugas',['pengaduan' => $pengaduan]);
         }
-        function logout(){
+      
+        function status($id){
+            $pengaduan = DB::table('pengaduan')->where('id_pengaduan', '=', $id)->first();
+            return view ('proses',['pengaduan' => $pengaduan]);
+            
+        }
+        function proses_status(request $request , $id){
+
+            $status = $request->status;
+    
+            DB::table('pengaduan')->where('id_pengaduan','=',$id)->update([
+                
+                'status' => $status,
+            ]);
+            return redirect('/petugas');
+        }    
+         function logout(){
             Auth::guard("petugas")->logout();
     
             return redirect("login_petugas");
         }
-      
-       
 }

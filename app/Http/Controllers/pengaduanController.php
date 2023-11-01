@@ -55,7 +55,7 @@ class pengaduanController extends Controller
             'nik' => Auth::user()->nik,
             'isi_laporan' => $isi_laporan,
             'foto' => $request->gambar->getClientOriginalName(),
-            'status' => 'proses'
+            'status' => '0'
         ]);
 
         return redirect('/table');

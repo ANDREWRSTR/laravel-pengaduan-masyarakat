@@ -32,6 +32,23 @@
         margin-left: 30px;
         cursor: pointer;
     }
+    .tabel{
+      text-align: center;
+      width: 320px;
+      background-color: #2c3034;
+    }
+    .trtr{
+      background-color: #212529;
+      color: white;
+      padding: 5px;
+      height: 40px;
+    }
+    .gambar{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 320px;
+    }
 </style>
 <body>
   <nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
@@ -59,7 +76,7 @@
       <th scope="col">Tanggal Kejadian</th>
       <th scope="col">Nik</th>
       <th scope="col">Isi Laporan</th>
-      <th scope="col">Foto</th>
+      {{-- <th scope="col">Foto</th> --}}
       <th scope="col">Status</th>
       
     </tr>
@@ -73,11 +90,25 @@
       <td>{{$pengaduan->tgl_pengaduan}}</td>
       <td>{{$pengaduan->nik}}</td>
       <td  style="max-width:200px;">{{$pengaduan->isi_laporan}}</td>
-      <td><img src='{{asset("storage/image/".$pengaduan->foto)}}' width="70px"/></td>
+      {{-- <td><img src='{{asset("storage/image/".$pengaduan->foto)}}' width="70px"/></td> --}}
       <td>{{$pengaduan->status}}</td>
       
-    </tr>@endforeach
+    </tr>
   </tbody>
-</table>
-  
+
+     </table>
+     <table class="tabel">
+  <thead>
+    <tr class="trtr">
+      <th scope="col">Foto</th>
+    </tr>  
+  </thead>
+  <tbody>
+     <tr>
+
+       <td class="gambar" ><img src='{{asset("storage/image/".$pengaduan->foto)}}' width="300px" /></td>
+       
+     </tr>@endforeach
+   </tbody>
+     </table>
 </div>
