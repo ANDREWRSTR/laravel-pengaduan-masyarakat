@@ -74,6 +74,7 @@ class pengaduanController extends Controller
         DB::table('pengaduan')->where('id_pengaduan','=',$id)->update([
             
             'isi_laporan' => $isi_laporan,
+            'status' => '0',
          
         ]);
         

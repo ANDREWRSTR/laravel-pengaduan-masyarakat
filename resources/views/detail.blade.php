@@ -48,6 +48,8 @@
       justify-content: center;
       align-items: center;
       width: 320px;
+      margin-bottom: 8px;
+      margin-top: 8px;
     }
 </style>
 <body>
@@ -111,4 +113,4 @@
      </tr>@endforeach
    </tbody>
      </table>
-</div>
+</div><br><br><br>

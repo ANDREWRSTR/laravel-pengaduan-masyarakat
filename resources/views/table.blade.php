@@ -26,6 +26,7 @@
     .opsi{
       width: 30px;
     }
+    
 
 </style>
 

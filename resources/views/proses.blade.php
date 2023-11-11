@@ -47,7 +47,7 @@
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label" style="color:black"><b>Proses</b></label><br>
                  <select name="status" class="form-select" >
-                    <option selected>0</option>
+                    <option selected>{{$pengaduan->status}}</option>
                     <option value="proses" >proses</option>
                     <option value="selesai" >selesai</option>
                   </select>  

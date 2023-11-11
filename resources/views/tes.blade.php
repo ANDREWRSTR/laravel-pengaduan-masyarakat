@@ -1,6 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="aa/bs/css/bootstrap.min.css">
+
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   const checkboxes = document.querySelectorAll('input[type=checkbox]');
@@ -38,11 +44,20 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 </head>
-<body>
-
-<input type="checkbox" id="pilihan1"> Sopan <br>
-<input type="checkbox" id="pilihan2"> Waras <br>
-<input type="checkbox" id="pilihan3"> Main ML
-
+<style>
+  h1{
+    color: black;
+  }
+  .container{
+    color: black;
+  }
+</style>
+<body class="text-bg-secondary p-3"> 
+    <div class="container">
+      <h1>Pilih Keinginan Otot Anda</h1><br>
+       <p>1. <input type="checkbox" id="pilihan1"> Kering </p> 
+       <p>2. <input type="checkbox" id="pilihan2"> Besar </p> 
+       <p>3. <input type="checkbox" id="pilihan3"> Alami </p>
+    </div>
 </body>
 </html>

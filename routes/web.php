@@ -38,8 +38,7 @@ Route::post('/registrasi_petugas', [PetugasController:: class, 'proses_registras
 Route::get('/login_petugas',[LoginPetugasController::class, 'login_petugas']);
 Route::post('/login_petugas',[LoginPetugasController::class, 'proses_login_petugas']);
 
-Route::get('/status/{id}', [PetugasController:: class, 'status']);
-Route::post('/status/{id}', [PetugasController:: class, 'proses_status']);
+
 
 
 Route::middleware(['auth'])->group(function(){
@@ -57,5 +56,7 @@ Route::middleware(['auth'])->group(function(){
 Route::middleware(['cekpetugas'])->group(function(){
     Route::get('/petugas', [PetugasController:: class, 'halaman_petugas']);
     Route::get('/petugas/logout',[PetugasController::class,'logout']);
+    Route::get('/status/{id}', [PetugasController:: class, 'status']);
+    Route::post('/status/{id}', [PetugasController:: class, 'proses_status']);
 
 });
