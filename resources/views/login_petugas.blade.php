@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="/style.css">
-  <title>Login</title>
+  <title>Login petugas</title>
+  <link rel="icon" href="https://media.istockphoto.com/id/1483497733/id/vektor/petugas-polisi-kartun-berwarna-clipart.jpg?s=1024x1024&w=is&k=20&c=9Et4LX-4i2knbWY_ExMW9PgyjMYAc2109iVqm5v7A8A=" type="image/png">
+
 </head>
 <style>
 

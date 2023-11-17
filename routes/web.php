@@ -40,23 +40,24 @@ Route::post('/login_petugas',[LoginPetugasController::class, 'proses_login_petug
 
 
 
-
 Route::middleware(['auth'])->group(function(){
     Route::get('/table', [pengaduanController::class, 'table']);
     Route::get('/isi_laporan', [pengaduanController:: class, 'buat']);
     Route::post('/isi_laporan', [pengaduanController:: class, 'proses_tambah_pengaduan']);
     Route::get('/logout',[LoginController::class,'logout']);
-    Route::get('/detail_laporan/{id}',[pengaduanController::class,'detail_laporan']);
+    // Route::get('/detail_pengaduan/{id}',[pengaduanController::class,'detail_laporan']);
     Route::get('/detail_pengaduan/{id}', [pengaduanController:: class, 'detail']);
     Route::post('/update_pengaduan/{id}', [pengaduanController:: class, 'proses_update']);
     Route::get('/update_pengaduan/{id}', [pengaduanController::class, 'update']);
     Route::get('/hapus_pengaduan/{id}', [pengaduanController:: class, 'hapus']);
 });
-    
+     
+
 Route::middleware(['cekpetugas'])->group(function(){
     Route::get('/petugas', [PetugasController:: class, 'halaman_petugas']);
     Route::get('/petugas/logout',[PetugasController::class,'logout']);
-    Route::get('/status/{id}', [PetugasController:: class, 'status']);
-    Route::post('/status/{id}', [PetugasController:: class, 'proses_status']);
-
+    Route::get('/tanggapan/{id}', [PetugasController:: class, 'status']);
+    Route::post('/tanggapan/{id}', [PetugasController:: class, 'proses_status']);
+    Route::get('/katakata/{id}',[PetugasController::class,'tanggapan']);
+    Route::post('/katakata/{id}',[PetugasController::class,'proses_tanggapan']);   
 });

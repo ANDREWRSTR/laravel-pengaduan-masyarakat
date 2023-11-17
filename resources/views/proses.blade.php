@@ -18,11 +18,11 @@
         margin-left: 30px;
         cursor: pointer;
     }
-    .select{
+    /* .select{
         width: 900px;
         height: 40px;
         border-radius: 5px;
-    }
+    } */
     
 
 </style>
@@ -41,9 +41,16 @@
 
     <div class="text-bg-secondary p-3">
     <div class="container">
-        <form action={{url ("/status/$pengaduan->id_pengaduan")}} method="POST">
+        <form action={{url ("/tanggapan/$pengaduan->id_pengaduan")}} method="POST">
             @method("POST")
             @csrf
+            {{-- <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label" style="color:black"><b>Tanggapan</b></label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="6" name="keterangan" required></textarea>
+                @error ('isi_laporan')
+                    <div> {{$message}}</div>
+                @enderror
+            </div>  --}}
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label" style="color:black"><b>Proses</b></label><br>
                  <select name="status" class="form-select" >

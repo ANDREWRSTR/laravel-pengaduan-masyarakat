@@ -28,7 +28,7 @@ class PetugasController extends Controller
             
             'nama_petugas' => $nama,
             'username' => $un,
-            'password' =>  hash::make($pw),
+            'password' =>  Hash::make($pw),
             'telp' => $telp,
             'level' => $level,
         ]);
@@ -63,6 +63,25 @@ class PetugasController extends Controller
             ]);
             return redirect('/petugas');
         }    
+        function proses_tanggapan(request $request, $id, ){
+
+            $tanggapan = $request->keterangan;
+
+            DB::table('tanggapan')->insert([
+
+                'id_pengaduan' => $id,
+                'tgl_tanggapan' => date ('Y-m-d'),
+                'tanggapan' => $tanggapan,
+                'id_petugas' => Auth::guard("petugas")->user()->id
+            ]);
+            return redirect('/petugas');
+        }
+        function tanggapan($id){
+            $pengaduan = DB::table('pengaduan')->where('id_pengaduan', '=', $id)->first();
+            return view ('tanggapan',['pengaduan' => $pengaduan]);
+        }
+
+
          function logout(){
             Auth::guard("petugas")->logout();
     

@@ -29,7 +29,6 @@
     
 
 </style>
-
      @extends('layouts.app')
 
         @section('content')
@@ -43,8 +42,8 @@
   <thead>
     <tr>
       <th scope="col">Id</th>
-      {{--  <th scope="col">Tanggal Kejadian</th>
-      <th scope="col">Nik</th> --}}
+      <th scope="col">Tanggal Kejadian</th>
+      {{--<th scope="col">Nik</th> --}}
       <th scope="col"> Laporan</th>
       <th scope="col">Foto</th>
       {{-- <th scope="col">Status</th> --}}
@@ -56,9 +55,9 @@
        
    
     <tr>
-       <td>{{$pengaduan->id_pengaduan}}</td>
-      {{-- <td>{{$pengaduan->tgl_pengaduan}}</td>
-      <td>{{$pengaduan->nik}}</td> --}}
+      <td>{{$pengaduan->id_pengaduan}}</td>
+      <td>{{$pengaduan->tgl_pengaduan}}</td>
+      {{--<td>{{$pengaduan->nik}}</td> --}}
       <td  style="max-width:400px;">{{$pengaduan->isi_laporan}}</td>
       <td><img src='{{asset("storage/image/".$pengaduan->foto)}}' width="70px" /></td>
       {{-- <td>{{$pengaduan->status}}</td> --}}
@@ -71,4 +70,12 @@
   </tbody>
 </table>
   @endsection
+  @if(session('pesan'))
+        <script>
+            // Tampilkan pesan menggunakan alert
+            alert("{{ session('pesan') }}");
+        </script>
+    @endif
+    
 </div>
+

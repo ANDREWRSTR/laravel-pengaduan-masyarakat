@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\Auth;
 
 use App\models\pengaduan;
 
+use function Laravel\Prompts\alert;
+
 class pengaduanController extends Controller
 {
     function index(){
@@ -80,18 +82,33 @@ class pengaduanController extends Controller
         
         return redirect('/table');
     }
+    
     function hapus ($id){
-        DB::table('pengaduan')->where('id_pengaduan', '=', $id)->delete();
-        return redirect('/table');
-    }
-    function detail ($id){
-        $pengaduan = DB::table('pengaduan')->where('id_pengaduan', '=', $id)->get();
-        return view ('/detail',['pengaduan' => $pengaduan]);
+        //  $konfirmasi = confirm("Apakah Anda yakin ingin menghapus?");
+      
+        // if($konfirmasi){// 
+            DB::table('pengaduan')->where('id_pengaduan', '=', $id)->delete();
+            // alert("data dihapus");
+    //     }esle{
+
+        
+        return redirect('/table')->with("pesan","data berhasil dihapus");
+    // }
+}
+
+    function detail ($id ){
+        $pengaduan = DB::table('pengaduan')->where('id_pengaduan', $id)->get();
+        $tanggapan = DB::table('tanggapan')->where('id_petugas','54')->get();
+        // $tanggapan = DB::table('tanggapan')->join('tanggapan.id_petugas')->where('tanggapan.nama_petugas')->get();
+        
+        return view ('/detail',['pengaduan' => $pengaduan ,'tanggapan' => $tanggapan ]);
         
     }
+    
 
-    function detail_laporan($id){
-        $pengaduan = DB::table('pengaduan')->where('id_pengaduan', '=', $id)->get();
-        return view('/detail_laporan',['pengaduan' => $pengaduan]);
-    }
+    // function detail_laporan($id){
+    //     $keterangan = DB::table('tanggapan')->where('id_pengaduan', '=', $id)->get();
+    //     return view('/detail',['tanggapan' => $keterangan]);
+    // }
+
 }

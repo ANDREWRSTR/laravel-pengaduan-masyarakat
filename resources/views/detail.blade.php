@@ -112,5 +112,28 @@
        
      </tr>@endforeach
    </tbody>
-     </table>
+     </table><br>
+    <table class="table table-dark table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Id Petugas</th>
+          <th scope="col">Tanggapan</th>
+          <th scope="col">Tanggal Tanggapan</th>
+          {{-- <th scope="col">Nama Petugas</th> --}}
+        </tr>
+      </thead>
+        <tbody>
+     @foreach ($tanggapan  as $tanggapan) 
+     
+        <tr>
+          <td>{{$tanggapan->id_petugas}}</td> 
+          <td>{{$tanggapan->tanggapan}}</td>
+          <td>{{$tanggapan->tgl_tanggapan}}</td>
+          {{-- <td>{{$tanggapan->nama_petugas}}</td>  --}}
+      </tr> 
+    
+    @endforeach
+ </tbody>
+    </table>     
+        
 </div><br><br><br>

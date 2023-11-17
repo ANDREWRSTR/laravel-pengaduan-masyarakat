@@ -19,6 +19,7 @@
     .opsi{
       width: 30px;
     }
+    
 </style>
 <body>
     <nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
@@ -42,7 +43,7 @@
          <th scope="col">Isi Laporan</th>
          <th scope="col">Foto</th>
          <th scope="col">Status</th>
-         <th scope="col">Opsi</th>
+         <th scope="col" style="text-align: center">Opsi</th>
          
        </tr>
      </thead>
@@ -56,8 +57,10 @@
          <td>{{$pengaduan->nik}}</td>
          <td  style="max-width:200px;">{{$pengaduan->isi_laporan}}</td>
          <td><img src='{{asset("storage/image/".$pengaduan->foto)}}' width="70px"/></td>
-         <td>{{$pengaduan->status}}</td>
-         <td> <a href="/status/{{$pengaduan->id_pengaduan}}"><button class="btn btn-light">Tanggapi</button></a></td>
+         <td>{{$pengaduan->status}}
+        </td>
+         <td> <a href="/tanggapan/{{$pengaduan->id_pengaduan}}" ><button class="btn btn-secondary">status</button></a>
+              <a href="/katakata/{{$pengaduan->id_pengaduan}}" ><button class="btn btn-secondary">Tanggapi</button></a></td>
          
        </tr>@endforeach
      </tbody>
